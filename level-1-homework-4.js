@@ -55,13 +55,24 @@ function minPositive(arr,i = 0){
 //  2) Write a JavaScript function to get all possible subsets of given length of the given
 // array.
 
-function subArray (arr,n, i = 0) {
-  let result = []
-  for (let i = 0; i <= arr.length - n; i++) {
-      subArr = arr.slice(i,(i+n))
-      result.push(subArr)
+function subArray (arr,n) {
+    let subSeq = []
+    for (let i = 0; i <= arr.length - n; i++) {
+        subArr = arr.slice(i,(i+n))
+        result.push(subArr)
+    }
+    return subSeq
   }
-  return result
+
+  
+function slicedArray(arr,n) {
+    let result = []
+    let slicedArr = []
+    for (let i = 0; i < arr.length; i++) {
+        slicedArr = [].concat(arr.slice(0,i), arr.slice(i+1))
+        result.push(slicedArr)
+    }
+    return result
 }
 
 // stex mi tramabanutyun ei mtacel en el chkaroxaca grem, stex uzum ei bolor 3 irar koxqinnere grei,
